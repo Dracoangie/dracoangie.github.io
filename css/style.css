@@ -1,0 +1,92 @@
+﻿
+canvas {
+    image-rendering: pixelated;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.bar_modal, .ArtGallery_Modal,.Cinema_Modal,.Room_Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    flex-direction: row; /* Coloca .modal_container y .modal_container_der_group en una fila */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s;
+    --transform: translateY(100vh);
+    --transition: transform .8s;
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .4s;
+    --transform: translateY(0vh);
+}
+
+.modal_container {
+    margin: auto;
+    width: 40%; /* Ajusta según sea necesario */
+    max-width: 600px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+    order: 1; /* Asegura que esta columna esté a la izquierda */
+}
+
+.modal_container_der_group {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos hijos en una columna */
+    gap: 1em; /* Espaciado entre los elementos */
+    order: 2; /* Asegura que esta columna esté a la derecha */
+    /*max-height: 80vh; /* Ajusta el tamaño máximo según sea necesario */
+    overflow-y: auto; /* Añade desplazamiento vertical si es necesario */
+}
+
+.modal_container_der {
+    margin: auto;
+    width: 40%; /* Ajusta según sea necesario */
+    max-width: 600px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: block; /* Asegura que no interfiera con el layout */
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal_title {
+    font-size: 2.5em;
+}
+
+.modal_paragraph {
+    margin-bottom: 10px;
+}
+
+.modal_close {
+    text-decoration: none;
+    color: #fff;
+    background-color: #f26250;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color .3s;
+}
+
+.modal_close:hover {
+    color: #F26250;
+    background-color: #fff;
+}

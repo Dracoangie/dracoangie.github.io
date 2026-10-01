@@ -16,7 +16,7 @@ const gameHref = `${import.meta.env.BASE_URL}pixel/index.html?lang=${lang}`;
   </nav>
   <div class="header-actions">
     <a class="language-switch" href={switchHref} data-language-switch hreflang={lang === "es" ? "en" : "es"} aria-label={lang === "es" ? "English version" : "Versión en español"} title={lang === "es" ? "English version" : "Versión en español"}>{lang === "es" ? "EN" : "ES"}</a>
-    <a class="game-link" href={gameHref}><Gamepad2 size={18} /><span>{ui.pixel}</span><ArrowUpRight size={14} /></a>
+    <a class="game-link" href={gameHref} aria-label={ui.pixel} title={ui.pixel}><Gamepad2 size={18} /><span>{ui.pixel}</span><ArrowUpRight size={14} /></a>
     <button class="menu-toggle icon-button" aria-label={ui.openMenu} aria-expanded="false" aria-controls="main-nav" hidden>
       <Menu class="menu-open-icon" size={22} /><X class="menu-close-icon" size={22} />
     </button>

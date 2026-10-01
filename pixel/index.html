@@ -1,130 +1,49 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="img/icon_me_circle.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#21181b">
+  <title>Pixel mode · Work in progress</title>
+  <style>
+    @font-face { font-family: "Retro Gaming"; src: url("../fonts/retro-gaming.ttf") format("truetype"); font-display: swap; }
+    @font-face { font-family: "Rainyhearts"; src: url("../fonts/rainyhearts.ttf") format("truetype"); font-display: swap; }
+    * { box-sizing: border-box; margin: 0; }
+    body { min-width: 300px; min-height: 100svh; display: grid; place-items: center; overflow: hidden; background: #21181b; color: #f5ffe8; font: 22px/1.4 "Rainyhearts", sans-serif; }
+    body::before, body::after { content: ""; position: fixed; pointer-events: none; }
+    body::before { inset: 0; border: 12px solid #594a8c; }
+    body::after { left: 0; right: 0; bottom: 0; height: 18px; background: #f27b50; box-shadow: 0 -18px 0 #f2a25c, 0 -36px 0 #f2cf63; }
+    main { width: min(760px, calc(100% - 48px)); padding: 52px; position: relative; border: 4px solid #f5ffe8; background: #21181b; box-shadow: 12px 12px 0 #594a8c; }
+    main::before { content: ""; position: absolute; width: 12px; height: 12px; top: 14px; right: 14px; background: #f27b50; box-shadow: -18px 0 #f2a25c, -36px 0 #f2cf63; }
+    .kicker { color: #f2a25c; margin-bottom: 28px; }
+    h1 { font: 400 clamp(42px, 9vw, 86px)/1.15 "Retro Gaming", monospace; }
+    h1 span { color: #f2cf63; text-shadow: 4px 4px 0 #594a8c; }
+    .message { font-size: 26px; margin: 30px 0; max-width: 470px; }
+    .back { display: inline-flex; align-items: center; padding: 13px 18px; border: 3px solid #f5ffe8; background: #594a8c; color: #f5ffe8; font: 16px/1.3 "Retro Gaming", monospace; text-decoration: none; box-shadow: 5px 5px 0 #f27b50; }
+    .back:hover, .back:focus-visible { background: #f2cf63; color: #21181b; box-shadow: 5px 5px 0 #f27b50; outline: none; }
+    @media (max-width: 560px) {
+      main { padding: 38px 25px; }
+      .message { font-size: 22px; }
+      .back { font-size: 13px; }
+    }
+  </style>
 </head>
 <body>
-    <section class="bar_modal">
-        <div class="modal_container">
-            <h2 class="modal_title">This is me</h2>
-            <p class="modal_paragraph">
-                hola soy una patata danzante en el mundo de las idea que se ha pasado momentaneamente 
-                al mundo terrenal para asombrar con su increible magnificencia y sabiduria.
-            </p>
-            <a href="#" class="modal_close">cerrar</a>
-        </div>
-        
-        <div class="modal_container_der_group">
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u2</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u3</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-        </div>
-    </section>
-    <section class="ArtGallery_Modal">
-        <div class="modal_container">
-            <h2 class="modal_title">Art Gallery</h2>
-            <p class="modal_paragraph">
-                galeria de arte, donde podrás encontrar todo lo que te propongas    
-            </p>
-            <a href="#" class="modal_close">cerrar</a>
-        </div>
-        
-        <div class="modal_container_der_group">
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u2</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u3</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-        </div>
-    </section>
-    <section class="Cinema_Modal">
-        <div class="modal_container">
-            <h2 class="modal_title">Cinema</h2>
-            <p class="modal_paragraph">
-                galeria de arte, donde podrás encontrar todo lo que te propongas    
-            </p>
-            <a href="#" class="modal_close">cerrar</a>
-        </div>
-        
-        <div class="modal_container_der_group">
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u2</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u3</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-        </div>
-    </section>
-    <section class="Room_Modal">
-        <div class="modal_container">
-            <h2 class="modal_title">my room my life</h2>
-            <p class="modal_paragraph">
-                galeria de arte, donde podrás encontrar todo lo que te propongas    
-            </p>
-            <a href="#" class="modal_close">cerrar</a>
-        </div>
-        
-        <div class="modal_container_der_group">
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u2</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-            <div class="modal_container_der">
-                <h2 class="modal_title">This is u3</h2>
-                <p class="modal_paragraph">proyecto genérico 4</p>
-                <a href="#" class="modal_close">cerrar</a>
-            </div>
-        </div>
-    </section>
-
-    <canvas id="myCanvas" width="1000" height="1000"></canvas>
-    <script src="js/code.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/input.js"></script>
-    <script src="js/helper.js"></script>
-    <script src="js/scene.js"></script>
-    <script src="js/map.js"></script>
-    <script src="js/camera.js"></script>
-    <script src="js/mapNodes.js"></script>
-    <script src="js/Interactable.js"></script>
-
+  <main>
+    <p class="kicker">AN / PIXEL MODE</p>
+    <h1>WORK<br><span>IN PROGRESS</span></h1>
+    <p class="message" id="message">Estoy construyendo este modo. Volverá pronto.</p>
+    <a class="back" id="back" href="../">← VOLVER AL PORTFOLIO</a>
+  </main>
+  <script>
+    const english = new URLSearchParams(location.search).get("lang") === "en";
+    if (english) {
+      document.documentElement.lang = "en";
+      document.querySelector("#message").textContent = "I'm building this mode. It will be back soon.";
+      const back = document.querySelector("#back");
+      back.textContent = "← BACK TO PORTFOLIO";
+      back.href = "../en/";
+    }
+  </script>
 </body>
 </html>

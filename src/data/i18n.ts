@@ -9,7 +9,7 @@ export const content = {
     ui: {
       description: "Portfolio de Ángela Navarro. Desarrollo de videojuegos, programación de gameplay y Technical Art con Unity y Unreal Engine.",
       skip: "Saltar al contenido", home: "Ángela Navarro, inicio", nav: "Navegación principal", aboutNav: "Sobre mí", projectsNav: "Proyectos", contactNav: "Contacto", pixel: "Modo pixel", openMenu: "Abrir menú", closeMenu: "Cerrar menú",
-      heroLabel: "DESARROLLADORA DE VIDEOJUEGOS / TECHNICAL ART", scroll: "Descubrir más sobre mí",
+      heroLabel: "GAME DEVELOPER / TECHNICAL ART", scroll: "Descubrir más sobre mí",
       aboutKicker: "01 / DETRÁS DE LA PANTALLA", aboutHeadingStart: "Sobre", aboutHeadingAccent: "mí.", portraitCaption: "ÁNGELA NAVARRO", portraitRole: "PROGRAMACIÓN + ARTE", aboutLeadFirst: "Desarrollo gameplay.", aboutLeadSecond: "Me interesa el arte técnico.", skillsLabel: "Tecnologías y especialidades", experience: "Experiencia", education: "Formación",
       projectsKicker: "02 / PROYECTOS", projectsHeading: "Mis proyectos", project: "PROYECTO", details: "EN DETALLE", category: "VIDEOJUEGO", viewProject: "Ver en itch.io", showDetails: "Ver detalles de", showFront: "Ver portada de",
       contactKicker: "03 / CONTACTO", contactHeading: "¡Contáctame!", write: "Escribir a Ángela", contactIntro: "Puedes escribirme por correo o por LinkedIn.", copyEmail: "Copiar dirección de correo", copied: "Correo copiado.", copyFailed: "No se pudo copiar. Puedes usar el enlace de correo.", contactFooter: "DESARROLLO DE VIDEOJUEGOS / TECHNICAL ART", backTop: "Volver al inicio",

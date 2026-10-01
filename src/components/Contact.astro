@@ -1,0 +1,34 @@
+---
+import { ArrowUpRight, ArrowUp, Copy, Asterisk } from "@lucide/astro";
+import { content, type Lang } from "../data/i18n";
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const { profile, ui } = content[lang];
+---
+<footer class="contact" id="contacto" aria-labelledby="contact-title">
+  <div class="section-wrap">
+    <div class="section-kicker"><span class="eyebrow">{ui.contactKicker}</span><Asterisk size={28} /></div>
+    <div class="contact-heading">
+      <h2 id="contact-title"><span>{ui.contactHeading}</span></h2>
+      <a class="contact-arrow" href={`mailto:${profile.email}`} aria-label={ui.write}><ArrowUpRight stroke-width={1} /></a>
+    </div>
+    <div class="contact-details">
+      <div>
+        <p>{ui.contactIntro}</p>
+        <div class="email-row">
+          <a class="email-link" href={`mailto:${profile.email}`}>{profile.email}</a>
+          <button class="copy-email icon-button" data-email={profile.email} aria-label={ui.copyEmail} title={ui.copyEmail} hidden><Copy size={18} /></button>
+        </div>
+        <span class="copy-status" role="status" aria-live="polite"></span>
+      </div>
+      <div class="social-links">
+        {profile.links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}<ArrowUpRight size={18} /></a>)}
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {new Date().getFullYear()} Ángela Navarro</span>
+      <span class="eyebrow">{ui.contactFooter}</span>
+      <a class="back-top" href="#inicio" aria-label={ui.backTop}><ArrowUp size={18} /></a>
+    </div>
+  </div>
+</footer>

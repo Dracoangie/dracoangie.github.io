@@ -1,0 +1,23 @@
+---
+import { ArrowUpRight, Gamepad2, Menu, X } from "@lucide/astro";
+import { content, type Lang } from "../data/i18n";
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const { ui } = content[lang];
+const switchHref = `${import.meta.env.BASE_URL}${lang === "es" ? "en/" : ""}`;
+---
+<header class="site-header" id="site-header">
+  <a class="wordmark" href="#inicio" aria-label={ui.home}>an<span>.</span></a>
+  <nav aria-label={ui.nav} id="main-nav">
+    <a href="#sobre-mi">{ui.aboutNav}</a>
+    <a href="#proyectos">{ui.projectsNav}</a>
+    <a href="#contacto">{ui.contactNav} <ArrowUpRight size={14} /></a>
+  </nav>
+  <div class="header-actions">
+    <a class="language-switch" href={switchHref} data-language-switch hreflang={lang === "es" ? "en" : "es"} aria-label={lang === "es" ? "English version" : "Versión en español"} title={lang === "es" ? "English version" : "Versión en español"}>{lang === "es" ? "EN" : "ES"}</a>
+    <a class="game-link" href={`${import.meta.env.BASE_URL}pixel/index.html`}><Gamepad2 size={18} /><span>{ui.pixel}</span><ArrowUpRight size={14} /></a>
+    <button class="menu-toggle icon-button" aria-label={ui.openMenu} aria-expanded="false" aria-controls="main-nav" hidden>
+      <Menu class="menu-open-icon" size={22} /><X class="menu-close-icon" size={22} />
+    </button>
+  </div>
+</header>

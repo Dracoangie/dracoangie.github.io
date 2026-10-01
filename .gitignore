@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.cache/
+.qa/
+public/pixel/
+public/deprecated/
+public/Pixel.html
+.env
+.env.*
+!.env.example

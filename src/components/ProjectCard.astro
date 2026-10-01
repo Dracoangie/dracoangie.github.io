@@ -1,0 +1,32 @@
+---
+import { ArrowUpRight, RotateCw, Asterisk } from "@lucide/astro";
+import type { Project } from "../data/portfolio";
+import { content, type Lang } from "../data/i18n";
+interface Props { project: Project; index: number; lang: Lang; }
+const { project, index, lang } = Astro.props;
+const { ui } = content[lang];
+---
+<article class:list={["project-card", `card-${project.color}`]} data-project-card data-title={project.title} data-reveal>
+  <button class="flip-control icon-button" type="button" aria-label={`${ui.showDetails} ${project.title}`} aria-expanded="false" aria-controls={`details-${project.id}`} title={`${ui.showDetails} ${project.title}`} hidden>
+    <RotateCw size={20} />
+  </button>
+  <div class="card-rotator">
+    <div class="card-face card-front">
+      <div class="card-top"><span class="eyebrow">{ui.project} / {String(index + 1).padStart(2, "0")}</span><span class="card-corner" aria-hidden="true">✦</span></div>
+      <div class="card-art">
+        <img src={`${import.meta.env.BASE_URL}${project.image}`} alt={project.alt} loading="lazy" width="640" height="640" />
+      </div>
+      <div class="card-title-row"><h3>{project.title}</h3><Asterisk size={25} /></div>
+      <div class="card-footer"><p class="card-category eyebrow">{project.category ?? ui.category}</p><span class="eyebrow">AN / {String(index + 1).padStart(2, "0")}</span></div>
+    </div>
+    <div class="card-face card-back" id={`details-${project.id}`}>
+      <div class="card-back-top"><span class="eyebrow">{ui.details} / {String(index + 1).padStart(2, "0")}</span><Asterisk size={23} /></div>
+      <div class="card-back-copy">
+        <h3>{project.title}</h3>
+        <p class="card-subtitle">{project.subtitle}</p>
+        <p>{project.description}</p>
+      </div>
+      <a class="text-link" href={project.url} target="_blank" rel="noopener noreferrer">{ui.viewProject} <ArrowUpRight size={20} /></a>
+    </div>
+  </div>
+</article>

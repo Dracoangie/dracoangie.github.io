@@ -1,0 +1,17 @@
+---
+import { Asterisk } from "@lucide/astro";
+import { content, type Lang } from "../data/i18n";
+import ProjectCard from "./ProjectCard.astro";
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const { projects, ui } = content[lang];
+---
+<section class="projects section-wrap" id="proyectos" aria-labelledby="projects-title">
+  <div class="section-kicker"><span class="eyebrow">{ui.projectsKicker}</span><Asterisk size={24} /></div>
+  <div class="projects-heading" data-reveal>
+    <h2 id="projects-title">{ui.projectsHeading}</h2>
+  </div>
+  <div class="project-grid">
+    {projects.map((project, index) => <ProjectCard project={project} index={index} lang={lang} />)}
+  </div>
+</section>

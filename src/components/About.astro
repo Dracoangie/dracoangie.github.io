@@ -1,0 +1,38 @@
+---
+import { Asterisk, ArrowUpRight } from "@lucide/astro";
+import { content, type Lang } from "../data/i18n";
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const { profile, ui } = content[lang];
+const journey = [[ui.experience, profile.experience], [ui.education, profile.education]] as const;
+---
+<section class="about section-wrap" id="sobre-mi" aria-labelledby="about-title">
+  <div class="section-kicker"><span class="eyebrow">{ui.aboutKicker}</span><Asterisk size={24} /></div>
+  <h2 id="about-title" class="about-heading" data-reveal>{ui.aboutHeadingStart} <span>{ui.aboutHeadingAccent}</span></h2>
+  <div class="about-grid">
+    <figure class="about-portrait" data-reveal>
+      <img src={`${import.meta.env.BASE_URL}${profile.images.about.src}`} alt={profile.images.about.alt} width="320" height="320" loading="lazy" />
+      <figcaption><span>{ui.portraitCaption}</span><span>{ui.portraitRole} <ArrowUpRight size={14} /></span></figcaption>
+    </figure>
+    <div class="about-copy" data-reveal>
+      <p class="about-lead">{ui.aboutLeadFirst}<br />{ui.aboutLeadSecond}</p>
+      {profile.about.map((paragraph) => <p>{paragraph}</p>)}
+      <div class="skills" aria-label={ui.skillsLabel}>
+        {profile.skills.map((skill) => <span>{skill}</span>)}
+      </div>
+    </div>
+  </div>
+  <div class="journey-grid">
+    {journey.map(([title, items], index) => <div data-reveal>
+      <h3 class="journey-title"><span>{title}</span><span class="eyebrow">0{index + 1}</span></h3>
+      {items.map((item) => (
+        <article class="journey-item">
+          <p class="eyebrow">{item.date}</p>
+          <h4>{item.title}</h4>
+          <p class="journey-place">{item.place}</p>
+          {"detail" in item && <p class="journey-detail">{item.detail}</p>}
+        </article>
+      ))}
+    </div>)}
+  </div>
+</section>

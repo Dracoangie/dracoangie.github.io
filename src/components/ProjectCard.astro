@@ -5,6 +5,7 @@ import { content, type Lang } from "../data/i18n";
 interface Props { project: Project; index: number; lang: Lang; }
 const { project, index, lang } = Astro.props;
 const { ui } = content[lang];
+const linkLabel = project.url.includes("github.com") ? ui.viewRepository : ui.viewProject;
 ---
 <article class:list={["project-card", `card-${project.color}`]} data-project-card data-title={project.title} data-reveal>
   <button class="flip-control icon-button" type="button" aria-label={`${ui.showDetails} ${project.title}`} aria-expanded="false" aria-controls={`details-${project.id}`} title={`${ui.showDetails} ${project.title}`} hidden>
@@ -26,7 +27,7 @@ const { ui } = content[lang];
         <p class="card-subtitle">{project.subtitle}</p>
         <p>{project.description}</p>
       </div>
-      <a class="text-link" href={project.url} target="_blank" rel="noopener noreferrer">{ui.viewProject} <ArrowUpRight size={20} /></a>
+      <a class="text-link" href={project.url} target="_blank" rel="noopener noreferrer">{linkLabel} <ArrowUpRight size={20} /></a>
     </div>
   </div>
 </article>

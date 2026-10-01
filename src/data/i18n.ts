@@ -11,7 +11,7 @@ export const content = {
       skip: "Saltar al contenido", home: "Ángela Navarro, inicio", nav: "Navegación principal", aboutNav: "Sobre mí", projectsNav: "Proyectos", contactNav: "Contacto", pixel: "Modo pixel", openMenu: "Abrir menú", closeMenu: "Cerrar menú",
       heroLabel: "GAME DEVELOPER / TECHNICAL ART", scroll: "Descubrir más sobre mí",
       aboutKicker: "01 / DETRÁS DE LA PANTALLA", aboutHeadingStart: "Sobre", aboutHeadingAccent: "mí.", portraitCaption: "ÁNGELA NAVARRO", portraitRole: "PROGRAMACIÓN + ARTE", aboutLeadFirst: "Desarrollo gameplay.", aboutLeadSecond: "Me interesa el arte técnico.", skillsLabel: "Tecnologías y especialidades", experience: "Experiencia", education: "Formación",
-      projectsKicker: "02 / PROYECTOS", projectsHeading: "Mis proyectos", project: "PROYECTO", details: "EN DETALLE", category: "VIDEOJUEGO", viewProject: "Ver en itch.io", showDetails: "Ver detalles de", showFront: "Ver portada de",
+      projectsKicker: "02 / PROYECTOS", projectsHeading: "Mis proyectos", project: "PROYECTO", details: "EN DETALLE", category: "VIDEOJUEGO", viewProject: "Ver en itch.io", viewRepository: "Ver repositorio", showDetails: "Ver detalles de", showFront: "Ver portada de",
       contactKicker: "03 / CONTACTO", contactHeading: "¡Contáctame!", write: "Escribir a Ángela", contactIntro: "Puedes escribirme por correo o por LinkedIn.", copyEmail: "Copiar dirección de correo", copied: "Correo copiado.", copyFailed: "No se pudo copiar. Puedes usar el enlace de correo.", contactFooter: "DESARROLLO DE VIDEOJUEGOS / TECHNICAL ART", backTop: "Volver al inicio",
     },
   },
@@ -42,7 +42,7 @@ export const content = {
       ...({
         babelship: { alt: "Characters and platforms from Babelship", description: "You can find the game, credits and more about Babelship: Tales from the Black Hole Suburb on itch.io." },
         competencia: { subtitle: "Video game project", alt: "Artwork for the game Competencia desleal", description: "You can see Competencia desleal and its credits on itch.io." },
-        anulax: { subtitle: "Video game project", alt: "Cover art for the game Anulax", description: "You can see Anulax, check the credits and play the game on itch.io." },
+        arkanoid: { subtitle: "Arkanoid developed in C++ and SDL2", alt: "Main menu of Project Arkanoid", description: "A classic Arkanoid implementation developed in C++ with SDL2, object-oriented architecture, scene management and data-driven levels." },
       }[project.id] ?? {}),
     })),
     ui: {
@@ -50,7 +50,7 @@ export const content = {
       skip: "Skip to content", home: "Ángela Navarro, home", nav: "Main navigation", aboutNav: "About", projectsNav: "Projects", contactNav: "Contact", pixel: "Pixel mode", openMenu: "Open menu", closeMenu: "Close menu",
       heroLabel: "GAME DEVELOPER / TECHNICAL ART", scroll: "Learn more about me",
       aboutKicker: "01 / BEHIND THE SCREEN", aboutHeadingStart: "About", aboutHeadingAccent: "me.", portraitCaption: "ÁNGELA NAVARRO", portraitRole: "PROGRAMMING + ART", aboutLeadFirst: "I develop gameplay.", aboutLeadSecond: "I'm interested in Technical Art.", skillsLabel: "Skills and technologies", experience: "Experience", education: "Education",
-      projectsKicker: "02 / PROJECTS", projectsHeading: "My projects", project: "PROJECT", details: "DETAILS", category: "VIDEO GAME", viewProject: "View on itch.io", showDetails: "View details of", showFront: "View front of",
+      projectsKicker: "02 / PROJECTS", projectsHeading: "My projects", project: "PROJECT", details: "DETAILS", category: "VIDEO GAME", viewProject: "View on itch.io", viewRepository: "View repository", showDetails: "View details of", showFront: "View front of",
       contactKicker: "03 / CONTACT", contactHeading: "Contact me!", write: "Email Ángela", contactIntro: "You can email me or contact me on LinkedIn.", copyEmail: "Copy email address", copied: "Email copied.", copyFailed: "Couldn't copy the email. You can use the email link instead.", contactFooter: "GAME DEVELOPMENT / TECHNICAL ART", backTop: "Back to top",
     },
   },

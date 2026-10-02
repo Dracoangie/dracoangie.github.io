@@ -15,7 +15,7 @@ const journey = [[ui.experience, profile.experience], [ui.education, profile.edu
       <figcaption><span>{ui.portraitCaption}</span><span>{ui.portraitRole} <ArrowUpRight size={14} /></span></figcaption>
     </figure>
     <div class="about-copy" data-reveal>
-      <p class="about-lead">{ui.aboutLeadFirst}<br />{ui.aboutLeadSecond}</p>
+      <p class="about-lead"><span>{ui.aboutLeadFirst}</span><span>{ui.aboutLeadSecond}</span></p>
       {profile.about.map((paragraph) => <p>{paragraph}</p>)}
       <div class="skills" aria-label={ui.skillsLabel}>
         {profile.skills.map((skill) => <span>{skill}</span>)}
@@ -23,16 +23,18 @@ const journey = [[ui.experience, profile.experience], [ui.education, profile.edu
     </div>
   </div>
   <div class="journey-grid">
-    {journey.map(([title, items], index) => <div data-reveal>
+    {journey.map(([title, items], index) => <div class:list={["journey-block", index === 0 ? "journey-experience" : "journey-education"]} data-reveal>
       <h3 class="journey-title"><span>{title}</span><span class="eyebrow">0{index + 1}</span></h3>
-      {items.map((item) => (
-        <article class="journey-item">
-          <p class="eyebrow">{item.date}</p>
-          <h4>{item.title}</h4>
-          <p class="journey-place">{item.place}</p>
-          {"detail" in item && <p class="journey-detail">{item.detail}</p>}
-        </article>
-      ))}
+      <div class="journey-list">
+        {items.map((item) => (
+          <article class="journey-item">
+            <p class="eyebrow">{item.date}</p>
+            <h4>{item.title}</h4>
+            <p class="journey-place">{item.place}</p>
+            {"detail" in item && <p class="journey-detail">{item.detail}</p>}
+          </article>
+        ))}
+      </div>
     </div>)}
   </div>
 </section>
